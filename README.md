@@ -1,6 +1,6 @@
 # gopass
 
-Manage credentials between `Chrome Passwords`, `Lastpass` and `Keychain`.
+Manage credentials among `Chrome Passwords`, `Lastpass` and `Keychain`.
 
 ### Install
 
@@ -8,7 +8,9 @@ Manage credentials between `Chrome Passwords`, `Lastpass` and `Keychain`.
 $ go get github.com/golib/gopass
 ```
 
-### Migrate credentials from Lastpass to Chrome
+### Migrations
+
+#### Migrate credentials from Lastpass to Chrome
 
 - exports credentials from lastpass
 
@@ -26,7 +28,7 @@ $ go get github.com/golib/gopass
 
     visit [chrome://settings](chrome://settings) -> *Passwords* -> *(More actions)*
 
-### Migrate credentials from csv file to macos Keychain
+#### Migrate credentials from csv file to macos Keychain
 
 - exports credentials from your provider
 
