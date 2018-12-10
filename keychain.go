@@ -63,6 +63,9 @@ func keychainImporter() cli.ActionFunc {
 			return errors.New("cannot find username, password and url fields")
 		}
 
+		var (
+			includeEmpty = ctx.Bool("include-empty")
+		)
 		for {
 			fields, err := csvReader.Read()
 			if err != nil {
@@ -74,7 +77,7 @@ func keychainImporter() cli.ActionFunc {
 				return err
 			}
 
-			if len(fields[iuser]) == 0 || len(fields[ipasswd]) == 0 {
+			if !includeEmpty && (len(fields[iuser]) == 0 || len(fields[ipasswd]) == 0) {
 				log.Printf("[%s](%s): ignore credential with empty username or password\n", fields[iuser], fields[iurl])
 				continue
 			}

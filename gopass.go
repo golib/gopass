@@ -24,6 +24,10 @@ func main() {
 					Name:  "csv",
 					Usage: "specify csv `FILE` of credentials, exported from lastpass or 1Password",
 				},
+				cli.BoolFlag{
+					Name:  "include-empty",
+					Usage: "include empty username or password of credential, default to false",
+				},
 			},
 			Action: chromeImporter(),
 		},
@@ -38,6 +42,10 @@ func main() {
 				cli.BoolFlag{
 					Name:  "update",
 					Usage: "update old credential if existed",
+				},
+				cli.BoolFlag{
+					Name:  "include-empty",
+					Usage: "include empty username or password of credential, default to false",
 				},
 			},
 			Action: keychainImporter(),
